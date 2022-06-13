@@ -1,5 +1,6 @@
 # Credit-Card-Risk-Analysis
 **Goal** - Building a Machine Learning model to predict the likely hood of loan repayment on a given profile  <br />
+**Skills used** - Pandas, EDA, Seaborn, Machine Learning
 **Score**  - Accuracy of 70% with a recall score of 100. <br />
 **Best Fit Model**  - Naive bayes and Random Forest Classifier  <br />
 # Introduction
