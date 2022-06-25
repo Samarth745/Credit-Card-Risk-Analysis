@@ -11,7 +11,7 @@ We use the relation to train the dataset to perform Classification Algorthims in
 * Analyzing data of over 1000 applicants to understand the features in project 
 * Pre-Processing the data as per requirement
 * understanding the relation in Data
-* Encoding non numeric columns
+* Encoding non numeric columns using OHE
 * Scaling the data
 * Model Selection
 * Fine tuning the model  <br />
