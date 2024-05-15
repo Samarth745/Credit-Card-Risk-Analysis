@@ -1,40 +1,80 @@
-# Credit-Card-Risk-Analysis
-**Goal** - Building a Machine Learning model to predict the likely hood of loan repayment on a given profile  <br />
-**Skills used** Python, EDA, Machine Learnin <br>
-**Libraries used**- Pandas,  Seaborn, Scikit learn, numpy, matplotlib <br>
-**Score**  - Accuracy of 70% with a recall score of 100. <br />
-**Best Fit Model**  - Naive bayes and Random Forest Classifier  <br />
-# Introduction
-Any leading bank would like to predict whether or not a candinate would be able to repay the loan. 
-This projects uses Machine learning Algorithms to predict the possibility of loan repayment by a customer. 
-First we Explore the data to understand the relation of defaulters in loan repayment with respect to age, education, debts etc
-We use the relation to train the dataset to perform Classification Algorthims in Machine Learning
-* **Analyzing data of over 1000 applicants to understand the features in project**
-    Columns in the data - <br>
-    The data contains the credit details about credit borrowers:<br>
-    age - Age of Customer, ed - Eductation level of customer, employ: Tenure with current employer (in years) <br>
-    address: Number of years in same address, income: Customer Income, debtinc: Debt to income ratio <br>
-    creddebt: Credit to Debt ratio, othdebt: Other debts, default: Customer defaulted in the past (1= defaulted, 0=Never defaulted) <br>
-    Total Entries - 1000 <br>
-    Total Features - 11 <br>
-    39.4 % of data in Checking account and 18.3 % of data in Saving accounts is missing which is handled.
-* **Understanding the data by performning deep Analysis**
-    Use seaborn and matplot lib to see the relation, distribution of data for better understanding
-* **Pre-Processing the data as per requirement**
-    The data contains multiple categorical values. After splitting the data into training and testing models we encode it using One Hot Encoder <br>
-    Use manual encoding technique for ordinal columns <br>
-    handle Missing values using KNN Imputer and delete the features with more than 40% missing values. <br>
-    Cap the outlier values imputed using min max scalar to improve accuracy on test data. <br>
-* **Metric Selection**
-    The objective of this project is to minimize the loss by the company. Hence we want to identify maximum clients which are indeed prone to stop paying their debts. <br> 
-    Hence we are persuing low number of false negatives which is type 2 error. 
-    The metric which is preffered in this case is recall to minimize the loss. <br>
-* **Model Selection**
-    Models considered for the project are - KNeighborsClassifier, LogisticRegression, RandomForestClassifier, NaiveBayesClassifier
-    After studying individual model and tune the hyperparameters using gridsearchcv we select Multi Naive Bayes as our best fit for the given data. <br>
-    Score - recall=100, Accuracy=70 <br>
+# Credit Card Risk Analysis
+![Image](https://img.freepik.com/free-vector/risk-management-concept-illustration_114360-7037.jpg?t=st=1715780785~exp=1715784385~hmac=0f11b35256075d85a7dec855271d5ea94483e4b6b55bfd883dd91d843166a73b&w=740)
+## Introduction:
+The Credit Card Risk Analysis project aims to build a robust machine learning model to predict the likelihood of loan repayment based on customer profiles. By leveraging data science techniques, including exploratory data analysis (EDA) and machine learning algorithms, this project provides valuable insights for financial institutions to assess credit risk accurately.
 
-An accuracy of 70 percent was reached with a recall score of 100 using Multi Naive Bayes Algorithm
+## Project Goal:
+The primary goal of this project is to develop a predictive model that helps financial institutions determine whether a customer is likely to repay their loan. By analyzing various features such as age, education level, income, and debt-to-income ratio, the model aims to minimize the risk of default and optimize lending decisions.
+
+## Skills Used:
+- Python
+- Exploratory Data Analysis (EDA)
+- Machine Learning
+
+## Libraries Used:
+- Pandas
+- Seaborn
+- Scikit-learn
+- NumPy
+- Matplotlib
+
+## Data Overview:
+The dataset used in this project contains credit details of borrowers, including features such as age, education level, tenure with current employer, income, debt-to-income ratio, and previous default history. The dataset comprises 1000 entries and 11 features. Notably, 39.4% of data in the Checking account and 18.3% in the Saving accounts column were missing, which were handled during preprocessing.
+
+## Data Preprocessing:
+The preprocessing steps included handling missing values, encoding categorical variables using One Hot Encoder, manual encoding for ordinal columns, and outlier treatment using Min-Max Scalar. KNN Imputer was employed to handle missing values, and features with more than 40% missing values were deleted to ensure data integrity.
+Preprocessing the data We will use the following steps on input sets before building a model
+- Remove unwanted columns
+- Split the data in Train test parts
+- Encode categorical columns using OneHot Encoder
+- Handling Outliers
+- handling Missing Values
+- Scale the columns
+
+## Exploratory Data Analysis (EDA):
+EDA was conducted using Seaborn and Matplotlib to understand the relationships and distributions within the dataset. Insights gained from EDA informed feature selection and model building.
+Here we check credit amount confidance for each category
+Key points that we discovered in EDA
+- There is a high relation between credit amoount and duration
+- In scatterplot we notice that for high credit amount we have high duration for goodloans
+- Risk is highly relaated to Duration and credit amount
+
+## Model Selection:
+#### Metric 
+Since our objective is to minimize company loss, predicting the risk of client default. a good recall rate is desirable because we want to identify the maximum amount of clients that are indeed prone to stop paying their debts Thus, we are pursuing a small number of False Negatives <br>
+
+Several classification algorithms were considered for the project, including KNeighborsClassifier, LogisticRegression, RandomForestClassifier, and NaiveBayesClassifier. The models were evaluated and hyperparameters were tuned using GridSearchCV to select the best-performing model.
+
+## Best Fit Model:
+After thorough evaluation, the Multi Naive Bayes algorithm was selected as the best-fit model for the given data. It achieved an accuracy of 70% with a recall score of 100%, indicating its effectiveness in identifying clients prone to default.
+
+## Results
+#### Before 
+| Algorithm                | Accuracy | Recall     |
+|--------------------------|----------|------------|
+| Mult Naive Bayes        | 69.0     | 100.0      |
+| Bern Naive Bayes        | 68.0     | 94.117647  |
+| Logistic Regression     | 69.0     | 91.176471  |
+| Random Forest Classifier| 69.0     | 86.764706  |
+| K-Nearest-Neighb        | 60.0     | 76.470588  |
+| Gaus Naive Bayes        | 62.0     | 75.0       |
+
+#### After FineTuning
+| Algorithm                | Accuracy | Recall     |
+|--------------------------|----------|------------|
+| Mult Naive Bayes        | 69.0     | 100.0      |
+| Random Forest Classifier| 70.0     | 92.647059  |
+| K-Nearest-Neighb        | 66.0     | 91.176471  |
+
+## Data Source:
+The dataset used in this project was sourced from Kaggle under the name "Credit_risk_analysis."
 
 
- *  Data set - Kaggle Credit_risk_analysis
+
+## Contributing:
+Contributions to this project are welcome! 
+If you have any ideas for improvements or feature enhancements, feel free to open an issue or submit a pull request.
+
+
+## Contact Information:
+For any inquiries or feedback regarding this project, please email me [Samarth Prabhu](prabhusamarth001@gmail.com)
