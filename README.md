@@ -52,8 +52,6 @@ After thorough evaluation, the Multi Naive Bayes algorithm was selected as the b
 #### Before 
 | Algorithm                | Accuracy | Recall     |
 |--------------------------|----------|------------|
-| Mult Naive Bayes        | 69.0     | 100.0      |
-| Bern Naive Bayes        | 68.0     | 94.117647  |
 | Logistic Regression     | 69.0     | 91.176471  |
 | Random Forest Classifier| 69.0     | 86.764706  |
 | K-Nearest-Neighb        | 60.0     | 76.470588  |
